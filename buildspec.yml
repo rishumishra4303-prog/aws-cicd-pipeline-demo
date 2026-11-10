@@ -1,0 +1,15 @@
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Starting application validation"
+      - test -f index.html
+      - test -f appspec.yml
+      - test -f scripts/start_server.sh
+      - echo "All required deployment files are present"
+
+artifacts:
+  files:
+    - '**/*'
