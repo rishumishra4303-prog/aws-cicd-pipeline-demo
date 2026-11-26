@@ -1,36 +1,72 @@
-
 # AWS CI/CD Pipeline Demo
 
 ## Project Overview
-A demonstration project for understanding automated application deployment using GitHub and AWS CI/CD services.
 
-## Technologies
+This project demonstrates automated deployment of a static web application using GitHub and AWS CI/CD services. The application is deployed to an Amazon EC2 instance using AWS CodePipeline, CodeBuild, and CodeDeploy.
+
+## Technologies Used
+
 - GitHub
 - AWS CodePipeline
 - AWS CodeBuild
 - AWS CodeDeploy
 - Amazon EC2
-- IAM
+- AWS IAM
+- Apache HTTP Server
 - HTML
 - Bash
 
-## Project Workflow
-1. Application source code is maintained in GitHub.
-2. CodePipeline is intended to automate the deployment workflow.
-3. CodeBuild configuration defines the build process.
-4. CodeDeploy configuration defines application deployment steps.
-5. The application is intended to run on an EC2 instance.
+## Architecture and Workflow
+
+1. Application source code is stored in a GitHub repository.
+2. AWS CodePipeline detects source changes and starts the pipeline.
+3. AWS CodeBuild validates the required project files and prepares the deployment artifact.
+4. AWS CodeDeploy deploys the application to the EC2 instance.
+5. The deployment scripts configure and start the Apache HTTP Server.
+6. The application becomes accessible through the EC2 public IP address over HTTP.
 
 ## Project Structure
-- index.html
-- appspec.yml
-- buildspec.yml
-- scripts/start_server.sh
-- README.md
 
-## Current Status
-GitHub source code and deployment configuration files prepared.
-AWS CI/CD pipeline setup and deployment testing are pending.
+```text
+aws-cicd-pipeline-demo/
+│
+├── index.html
+├── appspec.yml
+├── buildspec.yml
+├── README.md
+│
+└── scripts/
+    └── start_server.sh
+```
+
+## Key Features
+
+- Automated deployment workflow using AWS CodePipeline.
+- GitHub source code integration.
+- Build artifact preparation using AWS CodeBuild.
+- Application deployment using AWS CodeDeploy.
+- Apache web server configuration on Amazon EC2.
+- Deployment lifecycle management using AppSpec hooks.
+
+## Deployment Status
+
+**Successfully Deployed**
+
+The CI/CD pipeline has been executed successfully, and the application has been deployed to the EC2 instance.
+
+The deployed website displays:
+
+**Welcome to My AWS CI/CD Project!**
+
+## What I Learned
+
+- Configuring AWS CI/CD services.
+- Integrating GitHub with AWS CodePipeline.
+- Preparing build artifacts using CodeBuild.
+- Configuring deployment lifecycle hooks using CodeDeploy.
+- Deploying and hosting a static web application on Amazon EC2.
+- Troubleshooting deployment and web server issues.
 
 ## Author
-Rishu Mishra
+
+**Rishu Mishra**
